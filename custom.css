@@ -114,28 +114,28 @@
    ============================================================ */
 
 .frame-cover {
-  height: /* ✏️ add height */ ;
+  height: 200px;
 }
 
 .frame-cover .showcase-img {
-  object-fit: /* ✏️ cover  */ ;
+  object-fit: cover;
 }
 
 .frame-contain {
-  height: /* ✏️ add height */ ;
+  height: 200px;
 }
 
 .frame-contain .showcase-img {
-  object-fit: /* ✏️ contain */ ;
+  object-fit: contain;
 }
 
 .frame-position {
-  height: /* ✏️ add height */ ;
+  height: 200px;
 }
 
 .frame-position .showcase-img {
   object-fit: cover;
-  object-position: /* ✏️ try different values */ ;
+  object-position: top;
 }
 
 
@@ -156,12 +156,12 @@
 
 .frame-aspect {
   width: 100%;
-  /* ✏️ add aspect-ratio here */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
 .frame-aspect .showcase-img {
-  /* ✏️ add object-fit here */
+  object-fit: cover;
 }
 
 
@@ -192,19 +192,31 @@
   width: 100%;
   display: block;
   object-fit: cover;
-  height: /* ✏️ 200px */ ;
+  height: 200px;
 }
 
 /* ✏️ Small — @media (min-width: 576px) { ... } */
+@media (min-width: 576px) {
+  .hero-img { height: 280px; }
+}
 
 
 /* ✏️ Medium — @media (min-width: 768px) { ... } */
+@media (min-width: 768px) {
+  .hero-img { height: 350px; }
+}
 
 
 /* ✏️ Large — @media (min-width: 992px) { ... } */
+@media (min-width: 992px) {
+  .hero-img { height: 450px; }
+}
 
 
 /* ✏️ Extra Large — @media (min-width: 1200px) { ... } */
+@media (min-width: 1200px) {
+  .hero-img { height: 520px; }
+}
 
 
 
@@ -233,19 +245,31 @@
 .responsive-grid {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: /* ✏️ repeat(1, 1fr) */ ;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 /* ✏️ Small (≥ 576px) — 2 columns */
+@media (min-width: 576px) {
+  .responsive-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 
 /* ✏️ Medium (≥ 768px) — 2 columns */
+@media (min-width: 768px) {
+  .responsive-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 
 /* ✏️ Large (≥ 992px) — 3 columns */
+@media (min-width: 992px) {
+  .responsive-grid { grid-template-columns: repeat(3, 1fr); }
+}
 
 
 /* ✏️ Extra Large (≥ 1200px) — 4 columns */
+@media (min-width: 1200px) {
+  .responsive-grid { grid-template-columns: repeat(4, 1fr); }
+}
 
 
 
@@ -269,3 +293,13 @@
    ============================================================ */
 
 /* ✏️ Write your dark mode media query here */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f0f0f0;
+  }
+  .r-card {
+    background-color: #1e1e1e;
+    border-color: #444;
+  }
+}
